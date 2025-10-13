@@ -1,7 +1,12 @@
 # TypeCombo-Analytics
-This is dbt project where I will use the data from my another project TypeCombo which is a typing game.
+This is a dbt project that uses the same data structure as my other project, [TypeCombo](https://github.com/Chyoppi/TypeCombo)
+
+I attempted to use Airbyte to transfer the raw data into Google BigQuery, but the setup was unsuccesful. So I decided to generate dummy data which replicates the structure of TypeCombo Prisma + PostgreSQL database for now.
+
+For now main goal is to practice dbt usage. Later on I want to solve how to connect the database into BigQuery so that I am able to make analysis from actual gameplay statistics.
 
 
+## DBT project default readme.
 ### Using the starter project
 
 Try running the following commands:
