@@ -1,0 +1,1 @@
+SELECT * FROM `typecombo-analytics.tc_analytics.Session`
