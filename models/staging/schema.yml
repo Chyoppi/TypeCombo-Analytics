@@ -1,0 +1,49 @@
+version: 2
+
+models:
+  - name: stg_session
+    description: "Staging model for session data"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        data_tests:
+        - unique
+        - not_null
+
+      - name: player_id
+        description: "The ID of the player associated with the session"
+        data_tests:
+        - not_null
+
+        # NOT IMPLEMENTED YET 
+        #- relationships:
+        #  arguments:
+        #    to: ref("stg_players")
+        #    field: id
+
+      - name: accuracy
+        description: "Players typing accuracy"
+        data_tests:
+        - not_null
+
+      - name: wpm
+        description: "Players word per minute"
+        data_tests:
+        - not_null
+
+      - name: createdAt
+        description: "When the game was played"
+        data_tests:
+        - not_null
+
+      - name: score
+        description: "Final score (accuracy and wpm combined)"
+        data_tests:
+        - not_null
+
+      - name: daily
+        description: "Was the game daily game or normal game"
+        data_tests:
+          - accepted_values:
+            arguments:
+              values: [true, false]
