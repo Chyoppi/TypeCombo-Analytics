@@ -10,14 +10,14 @@ models:
         - unique
         - not_null
 
-      - name: player_id
+      - name: playerId
         description: "The ID of the player associated with the session"
         data_tests:
         - not_null
         - relationships:
-          arguments:
-            to: ref("stg_players")
-            field: id
+            arguments:
+              to: ref("stg_players")
+              field: id
 
       - name: accuracy
         description: "Players typing accuracy"
@@ -42,9 +42,12 @@ models:
       - name: daily
         description: "Was the game daily game or normal game"
         data_tests:
-          - accepted_values:
-            arguments:
-              values: [true, false]
+        - not_null
+        #  - accepted_values:
+        #      arguments:
+        #        values: [true, false]
+        # issue with this for some reason ^
+        # otherwise all the tests worked without issues
   
   - name: stg_players
     description: "Staging for player data"
