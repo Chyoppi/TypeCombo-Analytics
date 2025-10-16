@@ -14,12 +14,10 @@ models:
         description: "The ID of the player associated with the session"
         data_tests:
         - not_null
-
-        # NOT IMPLEMENTED YET 
-        #- relationships:
-        #  arguments:
-        #    to: ref("stg_players")
-        #    field: id
+        - relationships:
+          arguments:
+            to: ref("stg_players")
+            field: id
 
       - name: accuracy
         description: "Players typing accuracy"
@@ -47,3 +45,23 @@ models:
           - accepted_values:
             arguments:
               values: [true, false]
+  
+  - name: stg_players
+    description: "Staging for player data"
+    columns:
+    - name: id
+      description: "PlayerId"
+      data_tests:
+      - unique
+      - not_null
+
+    - name: username
+      description: "Users unique username"
+      data_tests:
+      - unique
+      - not_null
+
+    - name: createdAt
+      description: "When was the user created"
+      data_tests:
+      - not_null
