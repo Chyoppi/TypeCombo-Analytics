@@ -6,4 +6,4 @@ SELECT
     createdAt,
     score,
     daily
-FROM `typecombo-analytics.tc_analytics.Session`
+FROM `typecombo-analytics.airbyte_internal.tc_analyticsSession883b24d43a660b002f1f7fbac48dedeb`
