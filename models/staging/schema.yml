@@ -42,13 +42,11 @@ models:
       - name: daily
         description: "Was the game daily game or normal game"
         data_tests:
-        - not_null
-        #  - accepted_values:
-        #      arguments:
-        #        values: [true, false]
-        # issue with this for some reason ^
-        # otherwise all the tests worked without issues
-  
+        - accepted_values:
+            values: [true, false]
+            quote: false
+
+
   - name: stg_players
     description: "Staging for player data"
     columns:
