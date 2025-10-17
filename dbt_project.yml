@@ -1,7 +1,7 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: "TC_Analytics"
+name: "typecombo_analytics"
 version: "1.0.0"
 
 # This setting configures which "profile" dbt uses for this project.
@@ -29,8 +29,14 @@ clean-targets: # directories to be removed by `dbt clean`
 # files using the `{{ config(...) }}` macro.
 models:
   TC_Analytics:
-    # Config indicated by + and applies to all files under models/example/
-    example:
-      +materialized: view
-    marts:
-      +materialized: view
+    models:
+      staging:
+        stg_players:
+          +materialized: view
+
+        stg_session:
+          +materialized: view
+
+      marts:
+        top_ten_scores:
+          +materialized: table
