@@ -4,7 +4,7 @@ models:
   - name: stg_session
     description: "Staging model for session data"
     columns:
-      - name: id
+      - name: session_id
         description: "The primary key for this table"
         data_tests:
         - unique
@@ -17,7 +17,7 @@ models:
         - relationships:
             arguments:
               to: ref("stg_players")
-              field: id
+              field: player_id
 
       - name: accuracy
         description: "Players typing accuracy"
@@ -52,8 +52,8 @@ models:
   - name: stg_players
     description: "Staging for player data"
     columns:
-    - name: id
-      description: "PlayerId"
+    - name: player_id
+      description: "The primary key for this table"
       data_tests:
       - unique
       - not_null
@@ -66,5 +66,50 @@ models:
 
     - name: createdAt
       description: "When was the user created"
+      data_tests:
+      - not_null
+
+  - name: stg_sentence
+    description: "Staging for sentence data"
+    columns:
+    - name: sentence_id
+      description: "The primary key for this table"
+      data_tests:
+      - unique
+      - not_null
+
+    - name: text
+      description: "Sentence that the player writes during the game"
+      data_tests:
+      - unique
+      - not_null
+
+    - name: createdAt
+      description: "When was the sentence created"
+      data_tests:
+      - not_null
+
+  - name: stg_dailychallenge
+    description: "Staging for dailychallenge data"
+    columns:
+    - name: daily_id
+      description: "The primary key for this table"
+      data_tests:
+      - unique
+      - not_null
+
+    - name: date
+      description: "What days daily challenge it is"
+      data_tests:
+      - unique
+      - not_null
+
+    - name: text
+      description: "Sentence for daily challenge which is gotten from sentence table"
+      data_tests:
+      - not_null
+
+    - name: createdAt
+      description: "When the dailychallenge was added"
       data_tests:
       - not_null
