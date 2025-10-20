@@ -15,9 +15,8 @@ models:
         data_tests:
         - not_null
         - relationships:
-            arguments:
-              to: ref("stg_players")
-              field: player_id
+            to: ref("stg_players")
+            field: player_id
 
       - name: accuracy
         description: "Players typing accuracy"
@@ -110,4 +109,5 @@ models:
     - name: createdAt
       description: "When the dailychallenge was added"
       data_tests:
+      - unique
       - not_null
