@@ -37,6 +37,12 @@ models:
         stg_session:
           +materialized: view
 
+        stg_sentence:
+          +materialized: view
+
+        stg_dailychallenge:
+          +materialized: view
+
       marts:
         top_ten_scores:
           +materialized: table

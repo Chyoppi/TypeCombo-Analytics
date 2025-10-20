@@ -1,0 +1,1 @@
+-- Every dailychallenges #1 player, harder one to develope but good practice B)
