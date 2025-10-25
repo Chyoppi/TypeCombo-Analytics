@@ -63,4 +63,43 @@ models:
         description: "When the game was played"
         data_tests:
         - not_null
+
+  - name: dailychallenge_winners
+    description: "Table returns for each daily challenge best player"
+    columns:
+      - name: challenge_date
+        description: "Day when the daily challenge was played"
+        data_tests:
+        - not_null
+        - unique
+
+      - name: session_id
+        description: "Sessions specific id"
+        data_tests:
+        - not_null
+        - unique
+
+      - name: playerId
+        description: "PlayerId of the winning player"
+        data_tests:
+        - not_null
+
+      - name: accuracy
+        description: "Writing accuracy"
+        data_tests:
+        - not_null
+
+      - name: wpm
+        description: "Words per minute"
+        data_tests:
+        - not_null
       
+      - name: score
+        description: "Players end score"
+        data_tests:
+        - not_null
+
+      - name: username
+        description: "Username of the winning player"
+        tests:
+          - not_null
