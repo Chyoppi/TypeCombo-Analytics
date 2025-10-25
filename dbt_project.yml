@@ -44,5 +44,11 @@ models:
           +materialized: view
 
       marts:
-        top_ten_scores:
+        top_ten:
+          +materialized: table
+
+        top_ten_daily:
+          +materialized: table
+
+        dailychallenge_winners:
           +materialized: table

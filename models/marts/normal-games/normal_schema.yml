@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: top_ten
+    description: "Returns the top ten scores from the session table"
+    columns:
+      - name: playerId
+        description: "The primary key for this table"
+        data_tests:
+          - not_null
+
+      - name: score
+        description: "Final score (accuracy and wpm combined)"
+        data_tests:
+        - not_null
+
+      - name: accuracy
+        description: "Players typing accuracy"
+        data_tests:
+        - not_null
+      
+      - name: wpm
+        description: "Players word per minute"
+        data_tests:
+        - not_null
+
+      - name: createdAt
+        description: "When the game was played"
+        data_tests:
+        - not_null
