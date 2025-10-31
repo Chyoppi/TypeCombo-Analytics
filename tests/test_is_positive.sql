@@ -1,3 +1,5 @@
+-- This is still unused because I need to study how custom tests work
+
 {% test is_value_positive(model, column_name)%}
 
 WITH validated_value AS (
