@@ -5,7 +5,7 @@ WITH daily_sessions AS (
         session_id,
         session_player_id,
         accuracy,
-        wpm,
+        words_per_minute,
         score,
         DATE(created_at) AS challenge_date
     FROM {{ref('stg_session')}}
@@ -25,7 +25,7 @@ daily_winners AS (
         session_id,
         session_player_id,
         accuracy,
-        wpm,
+        words_per_minute,
         score
     FROM ranked_players
     WHERE rank = 1

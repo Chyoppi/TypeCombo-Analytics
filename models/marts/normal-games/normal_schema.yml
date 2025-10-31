@@ -19,7 +19,7 @@ models:
         data_tests:
         - not_null
       
-      - name: wpm
+      - name: words_per_minute
         description: "Players word per minute"
         data_tests:
         - not_null

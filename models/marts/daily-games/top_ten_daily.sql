@@ -2,7 +2,7 @@ SELECT
     session_player_id,
     score,
     accuracy,
-    wpm,
+    words_per_minute,
     daily,
     created_at
 FROM
