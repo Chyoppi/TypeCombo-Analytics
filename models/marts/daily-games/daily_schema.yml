@@ -36,7 +36,7 @@ models:
         data_tests:
         - not_null
 
-  - name: dailychallenge_winners
+  - name: daily_challenge_winners
     description: "Table returns for each daily challenge best player"
     columns:
       - name: challenge_date

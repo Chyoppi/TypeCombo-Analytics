@@ -1,5 +1,5 @@
 SELECT
-    playerId,
+    session_player_id,
     score,
     accuracy,
     wpm,
