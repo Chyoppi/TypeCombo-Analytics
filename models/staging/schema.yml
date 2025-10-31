@@ -22,11 +22,15 @@ models:
         description: "What was the users writing accuracy in the game"
         data_tests:
         - not_null
+        - is_value_positive:
+          description: "Test returns error if there is negative values"
 
       - name: words_per_minute
         description: "How many words user writes per minute"
         data_tests:
         - not_null
+        - is_value_positive:
+          description: "Test returns error if there is negative values"
 
       - name: created_at
         description: "When was the finished and added to database"
@@ -37,6 +41,8 @@ models:
         description: "Final score of played game which is calculated by using combination of words_per_minute and accuracy"
         data_tests:
         - not_null
+        - is_value_positive:
+          description: "Test returns error if there is negative values"
 
       - name: daily
         description: "Was the played game daily challenge or not, uses boolean values"
