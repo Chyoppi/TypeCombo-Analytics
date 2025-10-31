@@ -2,10 +2,10 @@ version: 2
 
 models:
   - name: stg_session
-    description: "Staging model for session data"
+    description: "Staging model of played session data"
     columns:
       - name: session_id
-        description: "The primary key for this table"
+        description: "The primary key for this table and each session which is played has unique ID"
         data_tests:
         - unique
         - not_null
@@ -19,7 +19,7 @@ models:
             field: player_id
 
       - name: accuracy
-        description: "What is the users writing accuracy"
+        description: "What was the users writing accuracy in the game"
         data_tests:
         - not_null
 
@@ -34,12 +34,12 @@ models:
         - not_null
 
       - name: score
-        description: "Final score of playyed game which is calculated by using combination of words_per_minute and accuracy."
+        description: "Final score of played game which is calculated by using combination of words_per_minute and accuracy"
         data_tests:
         - not_null
 
       - name: daily
-        description: "Was the game daily game or normal game"
+        description: "Was the played game daily challenge or not, uses boolean values"
         data_tests:
         - accepted_values:
             values: [true, false]
@@ -50,7 +50,7 @@ models:
     description: "Staging for player data"
     columns:
     - name: player_id
-      description: "The primary key for this table"
+      description: "The primary key for this table and each player has unique ID"
       data_tests:
       - unique
       - not_null
@@ -62,7 +62,7 @@ models:
       - not_null
 
     - name: created_at
-      description: "When was the user created"
+      description: "When was the user created and added to the database"
       data_tests:
       - not_null
 
@@ -70,33 +70,33 @@ models:
     description: "Staging for sentence data"
     columns:
     - name: sentence_id
-      description: "The primary key for this table"
+      description: "The primary key for this table and each sentence within the database has unique ID"
       data_tests:
       - unique
       - not_null
 
     - name: text
-      description: "Sentence that the player writes during the game"
+      description: "Sentence that the player writes during the gameplay"
       data_tests:
       - unique
       - not_null
 
     - name: created_at
-      description: "When was the sentence created"
+      description: "When was the sentence created and added to the database"
       data_tests:
       - not_null
 
-  - name: stg_dailychallenge
-    description: "Staging for dailychallenge data"
+  - name: stg_daily_challenge
+    description: "Staging for daily challenge data"
     columns:
     - name: daily_id
-      description: "The primary key for this table"
+      description: "The primary key for this table, each daily challenge has unique id"
       data_tests:
       - unique
       - not_null
 
     - name: date
-      description: "What days daily challenge it is"
+      description: "Date what the daily challenge is for"
       data_tests:
       - unique
       - not_null
@@ -107,7 +107,7 @@ models:
       - not_null
 
     - name: created_at
-      description: "When the dailychallenge was added"
+      description: "When the daily challenge was created and added to the database"
       data_tests:
       - unique
       - not_null
