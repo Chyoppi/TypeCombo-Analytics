@@ -40,7 +40,7 @@ models:
         stg_sentence:
           +materialized: view
 
-        stg_dailychallenge:
+        stg_daily_challenge:
           +materialized: view
 
       marts:
@@ -50,5 +50,5 @@ models:
         top_ten_daily:
           +materialized: table
 
-        dailychallenge_winners:
+        daily_challenge_winners:
           +materialized: table
