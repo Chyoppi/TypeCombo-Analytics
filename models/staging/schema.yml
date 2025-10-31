@@ -10,7 +10,7 @@ models:
         - unique
         - not_null
 
-      - name: session_player_id
+      - name: player_id
         description: "The ID of the player associated with the session"
         data_tests:
         - not_null

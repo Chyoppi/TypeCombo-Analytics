@@ -3,7 +3,7 @@
 WITH daily_sessions AS (
     SELECT
         session_id,
-        session_player_id,
+        player_id,
         accuracy,
         words_per_minute,
         score,
@@ -23,7 +23,7 @@ daily_winners AS (
     SELECT
         challenge_date,
         session_id,
-        session_player_id,
+        player_id,
         accuracy,
         words_per_minute,
         score
@@ -36,5 +36,5 @@ SELECT
     players.username
 FROM daily_winners
 LEFT JOIN {{ref('stg_players')}} AS players
-    ON daily_winners.session_player_id = players.player_id
+    ON daily_winners.player_id = players.player_id
 ORDER BY challenge_date DESC

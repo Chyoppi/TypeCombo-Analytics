@@ -1,5 +1,5 @@
 SELECT
-    session_player_id,
+    player_id,
     score,
     accuracy,
     words_per_minute,
