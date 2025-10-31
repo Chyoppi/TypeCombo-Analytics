@@ -7,7 +7,7 @@ WITH daily_sessions AS (
         accuracy,
         wpm,
         score,
-        DATE(createdAt) AS challenge_date
+        DATE(created_at) AS challenge_date
     FROM {{ref('stg_session')}}
     WHERE daily = true
 ),

@@ -3,7 +3,7 @@ SELECT
     playerId AS session_player_id,
     accuracy,
     wpm,
-    createdAt,
+    createdAt AS created_at,
     score,
     daily
 FROM `typecombo-analytics.tc_analytics.Session`

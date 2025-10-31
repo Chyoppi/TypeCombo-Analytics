@@ -3,7 +3,7 @@ SELECT
     score,
     accuracy,
     wpm,
-    createdAt
+    created_at
 FROM
     {{ ref('stg_session') }}
 ORDER BY

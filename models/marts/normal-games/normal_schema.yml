@@ -4,7 +4,7 @@ models:
   - name: top_ten
     description: "Returns the top ten scores from the session table"
     columns:
-      - name: playerId
+      - name: session_player_id
         description: "The primary key for this table"
         data_tests:
           - not_null
@@ -24,7 +24,7 @@ models:
         data_tests:
         - not_null
 
-      - name: createdAt
+      - name: created_at
         description: "When the game was played"
         data_tests:
         - not_null

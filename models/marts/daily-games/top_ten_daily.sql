@@ -4,10 +4,10 @@ SELECT
     accuracy,
     wpm,
     daily,
-    createdAt
+    created_at
 FROM
     {{ ref('stg_session') }}
-WHERE daily = TRUE AND DATE(createdAt) = CURRENT_DATE()
+WHERE daily = TRUE AND DATE(created_at) = CURRENT_DATE()
 ORDER BY
     score DESC
 LIMIT 10
