@@ -15,8 +15,9 @@ models:
         data_tests:
         - not_null
         - relationships:
-            to: ref("stg_players")
-            field: player_id
+            arguments:
+              to: ref("stg_players")
+              field: player_id
 
       - name: accuracy
         description: "What was the users writing accuracy in the game"
@@ -42,8 +43,9 @@ models:
         description: "Was the played game daily challenge or not, uses boolean values"
         data_tests:
         - accepted_values:
-            values: [true, false]
-            quote: false
+            arguments:
+              values: [true, false]
+              quote: false
 
 
   - name: stg_players
