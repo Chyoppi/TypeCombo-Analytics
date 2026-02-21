@@ -28,9 +28,8 @@ models:
         description: "Was the session dailychallenge or not"
         data_tests:
         - accepted_values:
-            arguments:
-              values: [true, false]
-              quote: false
+            values: [true, false]
+            quote: false
 
       - name: created_at
         description: "When the game was played"
