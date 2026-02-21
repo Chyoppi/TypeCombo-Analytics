@@ -28,27 +28,28 @@ clean-targets: # directories to be removed by `dbt clean`
 # directory as views. These settings can be overridden in the individual model
 # files using the `{{ config(...) }}` macro.
 models:
-  TC_Analytics:
-    models:
-      staging:
-        stg_players:
-          +materialized: view
+  typecombo_analytics:
+    staging:
+      stg_players:
+        +materialized: view
 
-        stg_session:
-          +materialized: view
+      stg_session:
+        +materialized: view
 
-        stg_sentence:
-          +materialized: view
+      stg_sentence:
+        +materialized: view
 
-        stg_daily_challenge:
-          +materialized: view
+      stg_daily_challenge:
+        +materialized: view
 
-      marts:
-        top_ten:
-          +materialized: table
-
+    marts:
+      daily-games:
         top_ten_daily:
           +materialized: table
 
         daily_challenge_winners:
+          +materialized: table
+
+      normal-games:
+        top_ten:
           +materialized: table
